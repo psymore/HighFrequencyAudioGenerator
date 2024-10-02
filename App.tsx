@@ -5,25 +5,19 @@
  * @format
  */
 
-import React from 'react';
 import type {PropsWithChildren} from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import AnimalRepellentApp from './src/AnimapRepellentComponent';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -64,7 +58,10 @@ function App(): React.JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={backgroundStyle}>
+        {/* <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
@@ -91,6 +88,8 @@ function App(): React.JSX.Element {
           </Section>
           <LearnMoreLinks />
         </View>
+        */}
+        <AnimalRepellentApp />
       </ScrollView>
     </SafeAreaView>
   );
